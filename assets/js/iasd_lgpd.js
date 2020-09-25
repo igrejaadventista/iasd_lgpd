@@ -1,5 +1,4 @@
 function montaElementos(textos) {
-  console.log(textos);
   var box = document.createElement("div");
   box.className = "pa-box pa-none";
   box.id = "pa-cookies";
@@ -108,7 +107,7 @@ function getDomain() {
 }
 
 function getLanguage() {
-  console.log(navigator.language);
+  // console.log(navigator.language);
   if (/^es\b/.test(navigator.language)) {
     var textos = {
       text_paragrafo:
