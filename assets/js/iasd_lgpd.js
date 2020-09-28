@@ -107,25 +107,38 @@ function getDomain() {
 }
 
 function getLanguage() {
-  // console.log(navigator.language);
-  if (/^es\b/.test(navigator.language)) {
-    var textos = {
-      text_paragrafo:
-        "Utilizamos cookies y otras tecnologías similares para mejorar su experiencia en nuestros servicios, personalizar la publicidad y recomendar contenido que le interese. Al utilizar nuestros servicios, usted da su consentimiento para dicha supervisión. Conoce nuestra pagina ",
-      texto_link: "Política de privacidad",
-      link:
-        "https://www.adventistas.org/es/institucional/organizacion/politica-de-privacidad-de-datos-de-la-iglesia-adventista-del-septimo-dia/",
-      texto_botao: "Aceptar",
-    };
+  if (document.querySelector("html").getAttribute("lang")) {
+    var lg = document.querySelector("html").getAttribute("lang").substr(0, 2);
+  } else if (document.querySelector("meta[property='og:locale']")) {
+    var lg = document
+      .querySelector("meta[property='og:locale']")
+      .getAttribute("content")
+      .substr(0, 2);
   } else {
-    var textos = {
-      text_paragrafo:
-        "Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços, personalizar publicidade e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com tal monitoramento. Conheça nossa página de ",
-      texto_link: "Política de privacidade",
-      link:
-        "https://www.adventistas.org/pt/institucional/organizacao/politica-de-privacidade-de-dados-da-igreja-adventista-do-setimo-dia/",
-      texto_botao: "Aceitar",
-    };
+    var lg = navigator.language.substr(0, 2);
+  }
+
+  switch (lg) {
+    case "es":
+      var textos = {
+        text_paragrafo:
+          "Utilizamos cookies y otras tecnologías similares para mejorar su experiencia en nuestros servicios, personalizar la publicidad y recomendar contenido que le interese. Al utilizar nuestros servicios, usted da su consentimiento para dicha supervisión. Conoce nuestra pagina ",
+        texto_link: "Política de privacidad",
+        link:
+          "https://www.adventistas.org/es/institucional/organizacion/politica-de-privacidad-de-datos-de-la-iglesia-adventista-del-septimo-dia/",
+        texto_botao: "Aceptar",
+      };
+
+      break;
+    default:
+      var textos = {
+        text_paragrafo:
+          "Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços, personalizar publicidade e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com tal monitoramento. Conheça nossa página de ",
+        texto_link: "Política de privacidade",
+        link:
+          "https://www.adventistas.org/pt/institucional/organizacao/politica-de-privacidade-de-dados-da-igreja-adventista-do-setimo-dia/",
+        texto_botao: "Aceitar",
+      };
   }
 
   return textos;
