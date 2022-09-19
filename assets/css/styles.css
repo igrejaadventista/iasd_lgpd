@@ -5,6 +5,14 @@
 * Browsers: last 4 version
 */
 
+/* *{
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans",sans-serif;
+} */
+
 .pa-box {
   position: fixed;
   right: 0;
@@ -41,7 +49,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding-top: 3rem;
+  padding-top: 1rem;
 
   -webkit-box-align: center;
 
@@ -49,16 +57,16 @@
 
   align-items: center;
 
-  margin-right: 3rem;
-  margin-left: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .pa-btn {
   display: block;
   width: 100%;
-  height: 5rem;
+  /* height: 5rem; */
   padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  font-size: 1.06rem;
   line-height: 1.5;
   border-radius: 0.3rem;
   color: #212529;
@@ -88,7 +96,7 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
     -webkit-box-shadow 0.15s ease-in-out;
 
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -96,11 +104,11 @@
 .pa-paragraph {
   color: white;
 
-  font-size: 1.4rem;
+  font-size: .75rem;
   font-weight: 300;
   line-height: 1.5;
   text-align: left;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .pa-link {
