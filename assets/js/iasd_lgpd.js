@@ -12,11 +12,13 @@ function montaElementos(textos) {
   var button = document.createElement("button");
   button.className = "pa-btn";
   button.addEventListener("click", getDomain);
+  button.dataset.version = "02";
 
   var a = document.createElement("a");
   a.className = "pa-link";
   a.href = textos.link;
   a.target = "_blank";
+  
 
   var texto = document.createTextNode(textos.text_paragrafo);
 
@@ -136,7 +138,7 @@ function getLanguage() {
           "Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços, personalizar publicidade e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com tal monitoramento. Conheça nossa página de ",
         texto_link: "Política de privacidade",
         link:
-          "https://www.adventistas.org/pt/institucional/organizacao/politica-de-privacidade-de-dados-da-igreja-adventista-do-setimo-dia/",
+          "https://www.adventistas.org/pt/institucional/organizacao/politica-de-privacidade-de-dados-da-igreja-adventista-do-setimo-dia/#2",
         texto_botao: "Aceitar",
       };
   }

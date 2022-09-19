@@ -21,6 +21,7 @@ module.exports = function (grunt) {
       " * IASD LGPD Script\n" +
       " * https://adventistas.org\n" +
       " * Copyright 2020\n" +
+      " * Version: 190922 \n" +
       " */\n",
 
     cssmin: {
